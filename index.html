@@ -6,10 +6,17 @@
     <title>Unity WebGL Player | ChickAndChick</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script>
+      function Reset() {
+        var canvas = document.getElementById("unity-canvas"); 
+        canvas.height= document.documentElement.clientHeight;
+        canvas.width = document.documentElement.clientWidth; 
+    }
+    </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1080 height=1920></canvas>
+      <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -80,7 +87,7 @@
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = 1;
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+        //unityShowBanner('');
       } else {
         canvas.style.width = "1080px";
         canvas.style.height = "1920px";
